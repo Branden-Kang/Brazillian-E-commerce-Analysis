@@ -4,12 +4,12 @@ In this project, we analyzed a Brazilian e-commerce public dataset of orders mad
 
 Tasks:
 Some of the information or analysis that we extracted from this dataset include:
-●	Clustering: 
+-	Clustering: 
 We performed several Clustering on the location of the customers based on various features such as Revenue earned, Freight Ratio and Carrier Delays. 
 1.	Revenue: We noticed that majority of the revenue came from the metropolitan developed areas of Brazil (such as Rio, São Paulo) and there was an equitable distribution in the North & North-eastern areas. We analysed that there is very good possible market in these areas as the  population density in these regions and the economic conditions of these regions were developing at a very fast pace.  
 2.	Freight Ratio: Here , we noticed two interesting observations. First, maximum percent of Freight ratios were seen in northern areas, this was because the sellers are mostly located in southern areas and they charge more for the delivery to the Northern customers. Second, the higher ratio in the metro areas were seen to be because of the expedited shipments, which was observed as the products were delivered to the customer much earlier as compared to the expected delivery date. 
 3.	Carrier Delays: We observed a major hits of delays because of carriers in the developed metropolitan regions with better infrastructure. These issues need to be addressed by the 3PL companies because the on-time delivery plays an important role in customer satisfaction (as seen from NLP & Classification analysis). 
-●	Sales Analysis:
+-	Sales Analysis:
 We analysed the performance of Olist platform from both customer side and seller side using Map-Reduce and tried to give some suggestions to the platform.
 In this part, we analysed:
 1.	The trend of the total sales volume in each month
@@ -27,20 +27,20 @@ We analysed both payment count (because people sometimes pay by instalments) and
 7.	Dominant payment method used by the customers
 We also created a new variable, dominant payment method, based on the payment value and we found that credit card was still the most commonly used dominant payment method.
 Besides, we also tried to analyse the product sales based on time-series data (e.g. predict the sales volume of the most popular category in the future). However, since the whole timeline was too short -- we just had data in less than two years -- it was quite hard to find the seasonal factor or even use ARIMA to predict the sales in the future.
-●	Delivery Performance Classification (Binary): We worked through on-time delivery and find significant features that can affect delivery times. And, we identified that customer zip codes (customer area), carrier delay, and order approval month are most significant features contributing to delivery times. Customer zip codes can affect the delivery time because most seller locations are concentrated in metropolitan areas. Out of these areas, customer cannot access the product easily. And, carrier delay is related with courier companies such as Fedex, USPS after shipping. If there are some issues in delivery services, the delivery can be delayed. And, order approval month can affect the delivery time because there is a rainy season from October to March in Brazil, it can influence the delivery.
-●	Review Scores Classification (Multi-class): We built the multi-class classification models to predict the review scores from customers, which means the customer satisfaction and found out that on-time delivery can contribute to the satisfaction of the customer. If customers get their product on-time, they will be happy and satisfied.
-●	Feature Engineering: We derived new variables from original data set. New features such as “year”, “month”, “day(weekday)”, “hour” can be derived from “date” variable and we identified that order approval month can be important ones. When we built the classification models, the accuracy is not high in the beginning so we created the significant variables and it works well.
-●	Natural Language Processing: We performed natural language processing for review dataset. First, we read the review dataset. We split the multiple sentences into a sentence and then change a sentence into a single word. We remove stop-words such as “a”, “the” and punctuations. After that, we did lemmatization, which unite the verbs into one verb (e.g “is”, “was”, “were” -> “be”). We used chinking, chunking, POS tagging to sort the verb from the sentence. After finishing cleaning the review data, we started nlp works. We extracted top 20 words and identified the significant words from the customer review.
+-	Delivery Performance Classification (Binary): We worked through on-time delivery and find significant features that can affect delivery times. And, we identified that customer zip codes (customer area), carrier delay, and order approval month are most significant features contributing to delivery times. Customer zip codes can affect the delivery time because most seller locations are concentrated in metropolitan areas. Out of these areas, customer cannot access the product easily. And, carrier delay is related with courier companies such as Fedex, USPS after shipping. If there are some issues in delivery services, the delivery can be delayed. And, order approval month can affect the delivery time because there is a rainy season from October to March in Brazil, it can influence the delivery.
+-	Review Scores Classification (Multi-class): We built the multi-class classification models to predict the review scores from customers, which means the customer satisfaction and found out that on-time delivery can contribute to the satisfaction of the customer. If customers get their product on-time, they will be happy and satisfied.
+-	Feature Engineering: We derived new variables from original data set. New features such as “year”, “month”, “day(weekday)”, “hour” can be derived from “date” variable and we identified that order approval month can be important ones. When we built the classification models, the accuracy is not high in the beginning so we created the significant variables and it works well.
+-	Natural Language Processing: We performed natural language processing for review dataset. First, we read the review dataset. We split the multiple sentences into a sentence and then change a sentence into a single word. We remove stop-words such as “a”, “the” and punctuations. After that, we did lemmatization, which unite the verbs into one verb (e.g “is”, “was”, “were” -> “be”). We used chinking, chunking, POS tagging to sort the verb from the sentence. After finishing cleaning the review data, we started nlp works. We extracted top 20 words and identified the significant words from the customer review.
 
 Challenges:
-●	Data: The dataset was huge and merging 9 datasets to one single master dataset served lots of issues.
-●	ARIMA Model: Despite having a good amount of data , we had very limited time-series related data points which gave us an Arima model which did not make much importance.
-●	Only ID: Due to the data security issues, we had the seller/customer related data only in the form of ID. Hence, our market basket analysis didn't have much impact when observed in the form of ID.
-●	Portuguese Dataset: The whole dataset was in a different language which was hard. We had to download another dataset to translate all of the text data(Headers, Product Categories) to English.
+-	Data: The dataset was huge and merging 9 datasets to one single master dataset served lots of issues.
+-	ARIMA Model: Despite having a good amount of data , we had very limited time-series related data points which gave us an Arima model which did not make much importance.
+-	Only ID: Due to the data security issues, we had the seller/customer related data only in the form of ID. Hence, our market basket analysis didn't have much impact when observed in the form of ID.
+-	Portuguese Dataset: The whole dataset was in a different language which was hard. We had to download another dataset to translate all of the text data(Headers, Product Categories) to English.
 
 Recommendations:
-●	Sellers: Good market exists in North & North Eastern regions and sellers should make more DCs or presence there for next further market penetration, preferably in ZIP starting with 71-92.
-●	Targeted Marketing: Marketing must penetrate the north eastern market by targeting better coupons to attract new customers.
-●	Carrier Delays: These must be addressed as delay from 3PL can be handled easily by the company by making the contracts much more stringent.
-●	Frequent Item Sets: Olist can use the market basket analysis provided by us for their recommendations to users/customers.
-●	On-Time Delivery: This is the most important feature which was concluded using both NLP and our classification models and Olist must give extra emphasis on this KPI.
+-	Sellers: Good market exists in North & North Eastern regions and sellers should make more DCs or presence there for next further market penetration, preferably in ZIP starting with 71-92.
+-	Targeted Marketing: Marketing must penetrate the north eastern market by targeting better coupons to attract new customers.
+-	Carrier Delays: These must be addressed as delay from 3PL can be handled easily by the company by making the contracts much more stringent.
+-	Frequent Item Sets: Olist can use the market basket analysis provided by us for their recommendations to users/customers.
+-	On-Time Delivery: This is the most important feature which was concluded using both NLP and our classification models and Olist must give extra emphasis on this KPI.
