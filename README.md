@@ -2,7 +2,7 @@
 
 In this project, we analyzed a Brazilian e-commerce public dataset of orders made at Olist Store, the largest department store in Brazilian marketplaces. The dataset has orders from Oct 2016 to Nov 2018 made at multiple marketplaces in Brazil. Its features allows viewing an order from multiple dimensions: from order status, price, payment and freight performance to customer location, product attributes and finally reviews written by customers. There was also a geolocation dataset that includes Brazilian zip codes with latitude and longitude.This dataset gave us an insight  into the dynamics of an e-commerce industry. We used multiple methods to explore the data since we have different kinds of data sources. We also used the classification models to predict customer ratings (Low, Medium & High) and On-time Delivery Binary Classification. We also performed market segmentation based on the geolocation dataset through using k-means clustering and identified the different customer bases or possible market penetration locations. We also performed NLP and Sentimental Analysis on Comments/Reviews of Customers and identified the major features affecting the customer satisfaction. We believe our recommendations will enable Olist Store’s Operational Improvement and ultimately enable higher profits for the organisation.
 
-Tasks:
+## Tasks:
 Some of the information or analysis that we extracted from this dataset include:
 -	Clustering: 
 We performed several Clustering on the location of the customers based on various features such as Revenue earned, Freight Ratio and Carrier Delays. 
@@ -32,13 +32,13 @@ Besides, we also tried to analyse the product sales based on time-series data (e
 -	Feature Engineering: We derived new variables from original data set. New features such as “year”, “month”, “day(weekday)”, “hour” can be derived from “date” variable and we identified that order approval month can be important ones. When we built the classification models, the accuracy is not high in the beginning so we created the significant variables and it works well.
 -	Natural Language Processing: We performed natural language processing for review dataset. First, we read the review dataset. We split the multiple sentences into a sentence and then change a sentence into a single word. We remove stop-words such as “a”, “the” and punctuations. After that, we did lemmatization, which unite the verbs into one verb (e.g “is”, “was”, “were” -> “be”). We used chinking, chunking, POS tagging to sort the verb from the sentence. After finishing cleaning the review data, we started nlp works. We extracted top 20 words and identified the significant words from the customer review.
 
-Challenges:
+## Challenges:
 -	Data: The dataset was huge and merging 9 datasets to one single master dataset served lots of issues.
 -	ARIMA Model: Despite having a good amount of data , we had very limited time-series related data points which gave us an Arima model which did not make much importance.
 -	Only ID: Due to the data security issues, we had the seller/customer related data only in the form of ID. Hence, our market basket analysis didn't have much impact when observed in the form of ID.
 -	Portuguese Dataset: The whole dataset was in a different language which was hard. We had to download another dataset to translate all of the text data(Headers, Product Categories) to English.
 
-Recommendations:
+## Recommendations:
 -	Sellers: Good market exists in North & North Eastern regions and sellers should make more DCs or presence there for next further market penetration, preferably in ZIP starting with 71-92.
 -	Targeted Marketing: Marketing must penetrate the north eastern market by targeting better coupons to attract new customers.
 -	Carrier Delays: These must be addressed as delay from 3PL can be handled easily by the company by making the contracts much more stringent.
